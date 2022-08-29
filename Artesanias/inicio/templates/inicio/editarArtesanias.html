@@ -1,0 +1,40 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} Editar {% endblock %}
+
+{% block encabezado %}
+
+<!--Encabezdo -->
+<div class="contenedor">
+    <div>
+        <h3>Editar Artesania</h3>
+    </div>
+
+</div>
+<!-- /Encabezado-->
+
+
+{% endblock %}
+
+{% block contenido %}
+
+<!-- Formulario -->
+
+<div class="contenedor signupFrm">
+    <form class="form contenedor" action="{% url 'ActualizarArtesania' artesania.id %}" method="POST" role="form">
+        {%csrf_token%}
+        <label for="" >Nombre: </label>
+        <div class="inputContainer">
+            <input value="{{artesania.artesania}}" name="nombre" type="text" class="input">
+        </div>
+
+        <label for="" >Opinión: </label>
+        <div class="inputContainer">
+            <textarea type="text" class="input" name="descripcion">{{artesania.opinion}}</textarea>
+        </div>
+      <input type="submit" class="submitBtn" value="Editar">
+    </form>
+</div>
+ 
+
+{% endblock %}

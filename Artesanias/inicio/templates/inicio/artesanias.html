@@ -1,0 +1,19 @@
+{% extends "inicio/encabezado.html"%}
+
+{% block titulo%} Artesanias {%endblock%}
+
+{% block contenido %}
+    {% for artesania in artesanias %}
+        <div class="contenido_artesanias">
+            <div class="card_artesanias">
+                <img src="{{artesania.foto.url}}" alt="">
+                <div class="artesanias">
+                    <h3>{{artesania.nombre}}</h3>
+                    <p>{{artesania.descripcion}}</p>
+                    <h4>Origen: {{artesania.municipio}}</h4>
+                    <h4>Precio: ${{artesania.costo}}</h4>
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+{%endblock%}

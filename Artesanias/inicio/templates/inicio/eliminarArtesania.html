@@ -1,0 +1,33 @@
+{% extends "inicio/encabezado.html"%}
+{% block titulo%} ELIMINAR {%endblock%}
+
+{% block encabezado%}
+    <!--Encabezdo -->
+    <div>
+        <div class="contenido_eliminar">
+            <h3>ELIMINAR ARTESANIA</h3>
+        </div>
+    </div>
+    <!-- /Encabezado-->
+{%endblock%}
+
+{% block contenido %}
+
+    <div class="btn">
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <!-- Alerta -->
+                <div>
+                    <h5>Eliminando Artesania</h5>
+                    <p>¿Estas seguro de que deseas <strong>Eliminar</strong> la
+                        artesania seleccionada?.</p>
+                </div>
+        </div>
+                    <!-- /Alerta -->
+                    <button type="submit" class="botton_artesanias">Si</button>
+                    <a href="{%url 'Opiniones'%}" class="botton_artesanias1">Cancelar</a>
+            </form>
+        
+    </div>
+{% endblock %}
