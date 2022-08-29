@@ -26,7 +26,7 @@ urlpatterns = [
     path('registrar/', views.registrar, name='Registrar'),
     
     path('eliminarArtesania/<int:id>/',views.eliminarArtesania,name='EliminarArtesania'),
-    path('ActualizarArtesania/<int:id>/',views.editarArtesania,name='ActualizarArtesania'),
+    path('actualizarArtesania/<int:id>/',views.editarArtesania,name='ActualizarArtesania'),
     path('editarArtesania/<int:id>/',views.actualizarArtesanias,name='EditarArtesania'),
 ]
 

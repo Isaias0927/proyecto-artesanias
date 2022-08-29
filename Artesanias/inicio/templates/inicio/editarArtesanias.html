@@ -5,9 +5,9 @@
 {% block encabezado %}
 
 <!--Encabezdo -->
-<div class="contenedor">
-    <div>
-        <h3>Editar Artesania</h3>
+<div>
+    <div  class="contenido_eliminar">
+        <h3>EDITAR ARTESANIA</h3>
     </div>
 
 </div>
@@ -20,19 +20,21 @@
 
 <!-- Formulario -->
 
-<div class="contenedor signupFrm">
-    <form class="form contenedor" action="{% url 'ActualizarArtesania' artesania.id %}" method="POST" role="form">
+<div>
+    <form class="form" action="{% url 'ActualizarArtesania' artesania.id %}" method="POST" role="form">
         {%csrf_token%}
-        <label for="" >Nombre: </label>
-        <div class="inputContainer">
-            <input value="{{artesania.artesania}}" name="nombre" type="text" class="input">
+        <div class="form_container">
+            <div class="form_group">
+                <input value="{{artesania.artesania}}" name="artesania" type="text" class="form_input">
+                <label class="form_label" >Nombre: </label>
+            </div>
+    
+            <div class="form_group">
+                <textarea type="text" class="form_input" name="opinion">{{artesania.opinion}}</textarea>
+                <label class="form_label">Opinión: </label>
+            </div>
+          <input type="submit" class="botton_artesanias" value="Editar">
         </div>
-
-        <label for="" >Opinión: </label>
-        <div class="inputContainer">
-            <textarea type="text" class="input" name="descripcion">{{artesania.opinion}}</textarea>
-        </div>
-      <input type="submit" class="submitBtn" value="Editar">
     </form>
 </div>
  

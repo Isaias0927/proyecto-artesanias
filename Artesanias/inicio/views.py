@@ -37,12 +37,11 @@ def eliminarArtesania(request, id, confirmacion= 'inicio/eliminarArtesania.html'
 def editarArtesania(request, id):
     artesania = get_object_or_404(OpinionArtesania, id=id)
     form = Arte(request.POST, instance=artesania)
-    if form.is_valid():
-        form.save()
-        artesanias = OpinionArtesania.objects.all()
-        return render(request,'inicio/opiniones.html' ,{'artesanias':artesanias})
-    return render(request, 'inicio/editarArtesanias.html', {'artesania':artesania})
-
+    # if form.is_valid():
+    form.save()
+    artesanias = OpinionArtesania.objects.all()
+    return render(request,"inicio/opiniones.html" ,{'artesanias':artesanias})
+    # return render(request, 'inicio/editarArtesanias.html', {'artesania':artesania })
 
 
 def actualizarArtesanias(request,id):
