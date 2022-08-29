@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Lobster&family=Open+Sans:wght@300&family=Pacifico&display=swap" rel="stylesheet">
+    <title>{% block titulo%}  {%endblock%}</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="center-texto">
+                <nav class="navegacion">
+                    <a href="{%url 'Principal'%}" class="navegacion_enlace">Inicio</a>
+                    <a href="{%url 'Artesanias'%}" class="navegacion_enlace">Artesanias</a>
+                    <a href="{%url 'Opiniones'%}" class="navegacion_enlace">Opiniones</a>
+                  </nav>
+            </div>
+            <h1 class="titulo">Craft Mich</h1>
+            <h2 class="texto-small">Tienda de artesanías de Michoacán</h2>
+        </div>
+    </header>
+
+    {% block encabezado %}
+    {%endblock%}
+    {% block contenido %}
+    {%endblock%}
+</body>
+</html>

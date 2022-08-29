@@ -1,0 +1,65 @@
+{% extends "inicio/encabezado.html"%}
+
+
+{% block titulo%} Opiniones {%endblock%}
+
+{% block contenido %}
+<!-- Formulario -->
+<form class="form" action="{% url 'Registrar' %}" method="POST" role="form">
+    {%csrf_token%}
+    <div>
+        <div class="form_container">
+            <h1 class="form_container_h1">Escribe tu opinión sobre las Artesanias</h1>
+            <div class="form_group">
+                <div>
+                    <input name="artesania" type="text" class="form_input">
+                </div>
+                <label class="form_label">Nombre de la Artesania:</label>
+            </div>
+
+            <div class="form_group">
+                <div>
+                    <textarea name="opinion" class="form_input" rows="2"></textarea>
+                </div>
+                <label class="form_label">Opinión:</label>
+            </div>
+
+
+            <div class="form-actions">
+                <input type="submit" value="Enviar">
+            </div>
+
+        </div>
+    </div>
+</form>
+<!-- Fin del Formulario -->
+{% for artesania in artesanias %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Artesania</th>
+                <th>Opinión</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{artesania.artesania}}</td>
+            <td>{{artesania.opinion}}</td>
+            <td class="text-center">
+                <a href="{% url 'EliminarArtesania' artesania.id %}">Eliminar</a>
+            </td>
+            <!-- <td class="text-center">
+                <a href="{%url 'EditarArtesania' artesania.id %}">Editar</a>
+            </td> -->
+        </tr>
+    </table>   
+    
+{% endfor %} 
+
+
+
+{% endblock %}
+
+    
